@@ -1,0 +1,5 @@
+# Never commit secrets or local DB
+.streamlit/secrets.toml
+dashboard.db
+__pycache__/
+*.pyc

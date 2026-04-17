@@ -1,0 +1,24 @@
+{
+  "profiles": [
+    {
+      "name": "Axel",
+      "go_live_date": "2026-02-05",
+      "optimizer_path": "../pt_optimizer"
+    },
+    {
+      "name": "Elizabeth",
+      "go_live_date": "2026-02-18",
+      "optimizer_path": "../elizabeth_optimizer"
+    },
+    {
+      "name": "Veronica",
+      "go_live_date": "2026-02-18",
+      "optimizer_path": "../veronica_optimizer"
+    },
+    {
+      "name": "Shayla",
+      "go_live_date": "2026-02-24",
+      "optimizer_path": "../shayla_optimizer"
+    }
+  ]
+}
