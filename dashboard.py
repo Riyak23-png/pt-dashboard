@@ -290,20 +290,26 @@ if not summary_df.empty:
         y="Count",
         color="Stage",
         barmode="group",
+        text="Count",
         color_discrete_map={
-            "Results Views": "#c8dff0",
-            "Profile Views": "#3a8fc4",
-            "Contacts": "#1a5276",
+            "Results Views": "#5b9fd4",
+            "Profile Views": "#1f6fa3",
+            "Contacts":      "#0d3b5e",
         },
         category_orders={"Stage": stage_order},
     )
-    fig_funnel.update_traces(marker_line_width=0)
+    fig_funnel.update_traces(
+        marker_line_width=0,
+        texttemplate="%{text:,}",
+        textposition="outside",
+        textfont=dict(size=11, color="#444"),
+    )
     fig_funnel.update_layout(
         xaxis_title="",
         yaxis_title="Count",
         plot_bgcolor="white",
         paper_bgcolor="white",
-        height=380,
+        height=420,
         font=dict(family="sans-serif", size=13, color="#333"),
         legend=dict(
             orientation="h",
@@ -312,10 +318,13 @@ if not summary_df.empty:
             xanchor="left",
             x=0,
             title="",
-            font=dict(size=12),
+            font=dict(size=13),
+            bgcolor="rgba(0,0,0,0)",
         ),
-        xaxis=dict(showgrid=False, tickfont=dict(size=13)),
+        xaxis=dict(showgrid=False, tickfont=dict(size=14, color="#333")),
         yaxis=dict(showgrid=True, gridcolor="#f0f0f0", zeroline=False),
         margin=dict(t=60, b=40, l=50, r=20),
+        uniformtext_minsize=9,
+        uniformtext_mode="hide",
     )
     st.plotly_chart(fig_funnel, use_container_width=True)
